@@ -1,15 +1,13 @@
 // server.js
-
-var express  = require('express');
-var session  = require('express-session');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
-var app      = express();
-var port     = process.env.PORT || 5050;
-
-var passport = require('passport');
-var flash    = require('connect-flash');
+const express  = require('express'),
+ session  = require('express-session'),
+ cookieParser = require('cookie-parser'),
+ bodyParser = require('body-parser'),
+ morgan = require('morgan'),
+ app      = express(),
+ port     = process.env.PORT || 5050,
+ passport = require('passport'),
+ flash    = require('connect-flash');
 
 // configuration ==========================
 // connect to our database
@@ -41,7 +39,6 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
-
 
 
 // launch ======================================================================
